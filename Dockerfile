@@ -54,3 +54,11 @@ CMD ["python3", "tracking/video_demo.py", "/code/VT_ep1500.onnx", "/code/whatsap
 #python tracking/analysis_results.py # need to modify tracker configs and names
 
 # CMD ["python3", "/code/run.py"]
+
+
+# RUN DOCKER WITH SCREEN:
+# xhost +local:docker
+# docker run -it -e DISPLAY=$DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix -v $HOME/DroTrack/results:/code/results my-image-name
+
+# Override Dockerfile's CMD command:
+# docker run -it -e DISPLAY=$DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix -v $HOME/DroTrack/results:/code/results my-image-name bash
